@@ -1,0 +1,132 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Admin Login",
+        "version": "1.0.0",
+        "title": "Swagger Admin Login"
+    },
+    "host": "localhost:3003",
+    "tags": [
+        {
+            "name": "login",
+            "description": "Admin Login"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "Get login page",
+                "description": "Get login page",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful login",
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "To Login Successfully",
+                "description": "To Login Successfully",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Created login object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful Login"
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "post": {
+                "tags": [
+                    "logout"
+                ],
+                "summary": "To Logout Successfully",
+                "description": "To Logout Successfully",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Created logout object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful Login"
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "get": {
+                "tags": [
+                    "login"
+                ],
+                "summary": "Get login profile",
+                "description": "Get login profile",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Login": {
+            "type": "object",
+            "properties": {
+                "adminEmail": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Login"
+            }
+        }
+    }
+}
