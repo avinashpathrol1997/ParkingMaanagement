@@ -1,0 +1,107 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Admin Register",
+        "version": "1.0.0",
+        "title": "Swagger Admin Register EndPoints"
+    },
+    "host": "localhost:3003",
+    "tags": [
+        {
+            "name": "login",
+            "description": "Admin Register"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "register"
+                ],
+                "summary": "Get register page",
+                "description": "Get register page",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful registration",
+                        "schema": {
+                            "$ref": "#/definitions/Register"
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "register"
+                ],
+                "summary": "To Enter data and Register Successfully",
+                "description": "To Enter data and Register Successfully",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Created Register object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Register"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful Registration"
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "get": {
+                "tags": [
+                    "register"
+                ],
+                "summary": "Get register profile",
+                "description": "Get register profile",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Register"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Register": {
+            "type": "object",
+            "properties": {
+                "adminEmail": {
+                    "type": "string"
+                },
+                "adminName": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+            },
+            "xml": {
+                "name": "Register"
+            }
+        }
+    }
+    }
+}
